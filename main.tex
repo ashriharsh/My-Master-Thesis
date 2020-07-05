@@ -1,0 +1,69 @@
+%\documentclass[a4,12pt]{report} %,draft,openright]
+\documentclass[book,14pt]{thesis-gwu}[2020/02/03]
+\linespread{1.5} 
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{abstract}
+\usepackage{subfiles}
+\usepackage{import}
+\usepackage{array}
+\usepackage{fixltx2e}
+\usepackage{chngcntr}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+%\usepackage[round]{natbib}
+%\bibliographystyle{plainnat}
+
+
+\geometry{
+ a4paper,
+ left=3cm,
+ top=4cm,
+ right=2cm,
+ bottom=2.5cm
+ }
+ 
+\usepackage{mathptmx}
+\usepackage{setspace}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+\addbibresource{mybibliography.bib}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+
+\input{chapters/first_page}
+\pagenumbering{roman}
+\tableofcontents
+%\input{chapters/declaration_of_authorship.tex}
+
+\pagenumbering{arabic}
+\input{chapters/chapter_1_introduction.tex}
+\input{chapters/chapter_2.tex}
+\input{chapters/chapter_3.tex}
+\input{chapters/chapter_4.tex}
+\input{chapters/chapter_5.tex}
+\input{chapters/chapter_6.tex}
+\input{chapters/chapter_7.tex}
+\input{chapters/declaration_of_authorship}
+
+\printbibliography
+\listoffigures
+\listoftables
+
+\end{document}
+
+
+
