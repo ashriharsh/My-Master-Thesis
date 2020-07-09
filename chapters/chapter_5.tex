@@ -1,6 +1,42 @@
 \chapter{Discussion of the results from the Qualitative analysis and the experiment} \label{chap:chapter_5}
+This chapter analyses the findings from the implementation of the machine learning model as well as from the qualitative interviews as presented in the previous chapter. Based on the findings this chapter also answers the research questions mentioned in chapter 1 
 
-\section{Analysis of Key Performance Indicators} \label{sect:thefirst}
+\section{Analysis and Interpretation} \label{sect:analysis}
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c| c| c| C|} 
+ \hline 
+ Model. & MAP@10 & MAP@15 & MAP@20\\ [0.5ex] 
+ \hline \hline
+ Model 1: implicit ALS & 0.085 & 0.050 & 0.049 \\ 
+ \hline
+ Model 2: lightFM & 0.510  & 0.442   & 0.425 \\ 
+ \hline
+ Model 3: libFM &  \textbf{0.582} & \textbf{0.53} & \textbf{0.486}  \\ 
+ \hline
+ Model 4: Baseline & 0.428 & 0.377 & 0.345 \\
+ \hline
+\end{tabular}
+\caption{Experiment result.\\
+Source: Own investigation}
+\label{table:results}
+\end{table}
+
+This sub chapter considers the analysis of the data that is obtained from the implementation of the model and the qualitative interview.\\
+\par
+
+This study explored the use of machine learning based recommender system to realise the hyper-personalization concept. Four different machine learning models were used to create a recommender system using the implicit data-set representing the transaction. The first model (implicit ALS) created represents the traditional recommender system using only the user-item interaction data and not the contextual data. The second model implemented is a hybrid model which considers the user-item data along with additional features of the users and items. Third model is created using the contextual factors such as date-time, location. Fourth model is simple popularity based model i.e. frequency of a particular item bought by a user. To evaluate the performance of these model Mean Average Precision (MAP @K) metric is used. This metric identifies the relevant topics identified in the list of recommendations which is of length k. Higher the value for this metric, it means that the recommendations in the top of the list are relevant. The following table 6 shows the values obtained for the different models as mentioned before. \\
+\par
+
+From the quantitative interview part a semi-structured method based interview was conducted. 
+
+
+
 
 \section{Conclusions}
+
+As seen in the Table 6, libFM model which uses contextual data performs well as compared to other model. Chapter 3 highlights the implementation of libFM which is based on Factorization Machines method. Furthermore, through this experiment, it is demonstrated that for any organization which does not have rich data-set, just by using implicit data from the transaction logs and extracting additional contextual features related to time, season, dealer location etc. a Context Aware Recommender System can be modelled. Therefore under the context of Hyper-personalization, libFM model can be used to identify and model the user preferences and generate accurate recommendations. This answer the first Research Question \textbf{\textit{RQ1: How can a Context-Aware Recommender System be used to implement Hyper-Personalization in a Sales context}}. \\ 
 

@@ -2,6 +2,7 @@
 \documentclass[book,14pt]{thesis-gwu}[2020/02/03]
 \linespread{1.5} 
 
+\usepackage[toc,page]{appendix}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{abstract}
@@ -13,7 +14,7 @@
 \usepackage[style=authoryear,backend=biber]{biblatex}
 %\usepackage[round]{natbib}
 %\bibliographystyle{plainnat}
-
+\usepackage[hidelinks]{hyperref}
 
 \geometry{
  a4paper,
@@ -25,6 +26,8 @@
  
 \usepackage{mathptmx}
 \usepackage{setspace}
+\usepackage[toc,page]{appendix}
+
 
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
@@ -33,7 +36,7 @@
 
 \addbibresource{mybibliography.bib}
 
-\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1}
 
 \begin{document}
 \newenvironment{conditions}
@@ -43,12 +46,17 @@
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 \counterwithout{equation}{chapter}
+\setlength\bibitemsep{\baselineskip}
 
 \input{chapters/first_page}
+\input{chapters/library_declaration}
+\input{chapters/Abstract}
+%\input{chapters}
 \pagenumbering{roman}
 \tableofcontents
+\listoffigures
+\listoftables
 %\input{chapters/declaration_of_authorship.tex}
-
 \pagenumbering{arabic}
 \input{chapters/chapter_1_introduction.tex}
 \input{chapters/chapter_2.tex}
@@ -58,10 +66,14 @@
 \input{chapters/chapter_6.tex}
 \input{chapters/chapter_7.tex}
 \input{chapters/declaration_of_authorship}
+\pagenumbering{roman}
 
+\begin{appendices}
+\chapter{ 1}
+\end{appendices}
 \printbibliography
-\listoffigures
-\listoftables
+
+
 
 \end{document}
 
